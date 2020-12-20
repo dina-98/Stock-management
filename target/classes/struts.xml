@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+     <package name="default" namespace="/" extends="struts-default">
+   <default-action-ref name="index"></default-action-ref>
+   <action name="index">
+   <result>views/index.jsp</result>
+   </action>
+   
+   <action name="pStock" class="org.sid.web.PStockAction" method="index">
+   <result name="success">views/produit_stock.jsp</result>
+   </action>
+   <action name="pApprov" class="org.sid.web.PApprovAction" method="indexA">
+   <result name="success">views/produit_approv.jsp</result>
+   </action>
+   
+   
+   <action name="save" class="org.sid.web.PStockAction" method="save">
+   <result name="success">views/produit_stock.jsp</result>
+   </action>
+   <action name="saveA" class="org.sid.web.PApprovAction" method="saveA">
+        <result name="input">views/produit_approv.jsp</result>
+   <result name="success">views/produit_approv.jsp</result>
+   </action>
+   
+   
+   
+    <action name="delete" class="org.sid.web.PStockAction" method="delete">
+   <result name="success">views/produit_stock.jsp</result>
+   </action>
+   <action name="deleteA" class="org.sid.web.PApprovAction" method="deleteA">
+   <result name="success">views/produit_approv.jsp</result>
+   </action>
+   
+    <action name="edit" class="org.sid.web.PStockAction" method="edit">
+   <result name="success">views/produit_stock.jsp</result>
+   </action>
+   <action name="editA" class="org.sid.web.PApprovAction" method="editA">
+   <result name="success">views/produit_approv.jsp</result>
+   </action>
+ 
+ <action name="downloadPDFFileAction" class="org.sid.web.PStockAction" method="downloadCSVFileAction">
+   <result name="success">views/produit_approv.jsp</result>
+   </action>
+   
+   </package>
+
+    <!-- Add addition packages and configuration here. -->
+</struts>
